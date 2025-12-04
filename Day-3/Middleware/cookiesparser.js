@@ -14,5 +14,7 @@ app.get('/get-cookie', (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("Server running on http://localhost:3000/users/form");
+  console.log("Server running on http://localhost:3000/set-cookie");
+console.log("Server running on http://localhost:3000/get-cookie");
+
 });
