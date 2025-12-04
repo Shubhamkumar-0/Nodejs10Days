@@ -13,8 +13,21 @@ app.get('/get-cookie', (req, res) => {
   res.send(`Hello, ${username}`);
 });
 
+
+
+// Set signed cookie
+app.get('/set-signed', (req, res) => {
+  res.cookie('token', 'abc123', { signed: true });
+  res.send('Signed cookie set!');
+});
+
+// Read signed cookie
+app.get('/get-signed', (req, res) => {
+  res.send(`Signed token: ${req.signedCookies.token}`);
+});
+
 app.listen(3000, () => {
   console.log("Server running on http://localhost:3000/set-cookie");
-console.log("Server running on http://localhost:3000/get-cookie");
+console.log("Server running on http://localhost:3000/set-signed");
 
 });
