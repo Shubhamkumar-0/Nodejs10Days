@@ -1,8 +1,10 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
 
+
 const app = express();
 app.use(cookieParser()); // default: unsigned cookies
+app.use(cookieParser('mySecretKey')); //for signed cookies for additional security 
 
 app.get('/set-cookie', (req, res) => {
   res.cookie('username', 'Shubham'); // cookie name = 'username', value = 'Shubham'
